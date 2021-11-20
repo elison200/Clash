@@ -1,0 +1,21 @@
+h5{
+    font-family: Burbank Big Condensed;
+    font-size: 35px;
+}
+
+p{
+    font-family: Burbank Big Condensed;
+    font-size: 20px;
+    
+}
+
+label
+{
+    font-family: Burbank Big Condensed;
+    font-size: 21px;
+}
+
+.card{
+    border: solid 3px rgb(86, 202, 255);
+    transition: 0.3s;
+}

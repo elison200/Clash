@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <br>
+    <section class = "container">
+    <div class="row">
+        <div class="col-md-3">
+          <div class="card mb-3 " style="width: 250px; height: 600x; border-radius: 3%; ">
+            <div class="card-header">
+              <button (click)="deletecartaComponent()" type="button" class="m-0 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      
+            <img src={{currentCartas?.poster}} height="200" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{currentCartas?.titulo}}</h5>
+                <span *ngIf="isFavorite else opcion3" class="badge badge-warning">Favorito</span>
+                <p class="card-text"></p>
+
+                <ng-template #opcion3>
+               
+                </ng-template>
+
+                <div *ngIf="!seemoreselected; else opcion2">
+                  <p class="card-text"><small class="text-muted">{{currentCartas?.descripcion | slice:0:29}} ...</small></p>
+                </div>
+                <ng-template #opcion2>
+                  <p class="card-text"><small class="text-muted">{{currentCartas?.descripcion}}</small></p>
+                </ng-template>
+               
+                <label >★</label>
+                <label >★</label>
+                <label >★</label>
+                <label >★</label>
+                <br>
+                <label class="text-success">Fuerza + {{currentCartas?.fuerza}}  </label>&nbsp; &nbsp; &nbsp; &nbsp;
+                <label class="text-danger">Daño - {{currentCartas?.dano}} </label>
+                <br>
+                <button (click) = "seemore()" class="btn btn-primary mr-1">{{nombre1}}</button>
+                <button (click) = "addfavorite()"   class="btn btn-warning"><small>{{nombre2}}</small></button>
+            </div>
+          </div>
+        </div>
+<!-- 
+        <div class="col-md-3">
+            <div class="card mb-3 " style="width: 250px; height: 600x;">
+        
+              <img src="https://i.pinimg.com/736x/2c/5b/af/2c5baf6b634efe5565119ef75d8ab399.jpg" height="200" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Princesa</h5>
+                  <p class="card-text"></p>
+                  <p class="card-text"><small class="text-muted">habilidad de precision antes las torres enemigas a larga distancia</small></p>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <br>
+                <label class="text-success">Daño +55</label>&nbsp; &nbsp; &nbsp; &nbsp;
+                <label class="text-danger">Fuerza -1</label>
+                <br>
+                  <a href="/Hotel/Details/@item.Id" class="btn btn-primary mr-3">Ver carta</a>
+                  <a href="#"  class="btn btn-warning"><small>Detalles</small></a>
+              </div>
+            </div>
+          </div>
+
+          
+        <div class="col-md-3">
+            <div class="card mb-3 " style="width: 250px; height: 600x;">
+             
+              <img src="https://i.pinimg.com/originals/1f/f1/72/1ff172630b73f2c8480a9cc27a2c6958.jpg" height="200" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Verdugo</h5>
+                  <p class="card-text"></p>
+                  <p class="card-text"><small class="text-muted">Dominante de las espadas un gran personaje al momento de batallar</small></p>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <br>
+                <label class="text-success">Daño +88</label>&nbsp; &nbsp; &nbsp; &nbsp;
+                <label class="text-danger">Fuerza -8</label>
+                <br>
+                  <a href="/Hotel/Details/@item.Id" class="btn btn-primary mr-3">Ver carta</a>
+                  <a href="#"  class="btn btn-warning"><small>Detalles</small></a>
+              </div>
+            </div>
+          </div>
+
+          
+        <div class="col-md-3">
+            <div class="card mb-3 " style="width: 250px; height: 600x;">
+             
+              <img src="https://www.wallpapertip.com/wmimgs/1-16725_mago-de-hielo-clash-royale.jpg" height="200" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">mago de hielo</h5>
+                  <p class="card-text"></p>
+                  <p class="card-text"><small class="text-muted">habilidad muy potente que cogela atu enemigo recomedado</small></p>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <label >★</label>
+                  <br>
+                  <label class="text-success">Daño +70</label>&nbsp; &nbsp; &nbsp; &nbsp;
+                  <label class="text-danger">Fuerza -5</label>
+                  <br>
+                  <a href="/Hotel/Details/@item.Id" class="btn btn-primary mr-3">Ver carta</a>
+                  <a href="#"  class="btn btn-warning"><small>Detalles</small></a>
+              </div>
+            </div>
+          </div>
+
+          -->
+    </div>
+</section>
+
+<br>
+</body>
+</html>
+

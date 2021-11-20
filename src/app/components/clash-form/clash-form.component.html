@@ -1,0 +1,54 @@
+<form (ngSubmit)="onSubmit()" #cartaForm="ngForm">
+    <div class="form-group">
+        <label class = "text-white ">Nombre de la carta:</label>
+        <input type="text" [(ngModel)]="model.titulo" 
+        class="form-control form-control-sm" id="title" required name="title" #title="ngModel" placeholder="Nombre de la carta">
+        <div [hidden]="title.invalid || title.pristine" class="alert alert-danger">
+            Porfavor , Ingrese el nombre de la carta
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class = "text-white ">Descripcion de la carta:</label>
+        <input type="text" [(ngModel)]="model.descripcion" 
+        class="form-control form-control-sm" id="title" required name="title" #title="ngModel" placeholder="Descripcion">
+        <div [hidden]="title.invalid || title.pristine" class="alert alert-danger">
+            porfavor, Ingrese la descripcion de la carta
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class = "text-white ">fuerza de la carta:</label>
+        <input type="number" [(ngModel)]="model.fuerza" 
+        class="form-control form-control-sm" id="fuerza" required name="fuerza" placeholder="fuerza de la carta">
+    </div>
+
+
+    <div class="form-group">
+        <label class = "text-white ">daño de la carta:</label>
+        <input type="number" [(ngModel)]="model.dano" 
+        class="form-control form-control-sm" id="dano" required name="dano" placeholder="Daño de la carta">
+    </div>
+
+    <div class="form-group row">
+        <label for="genre" class="col-md-4 text-white">Tipo de Mazo</label>
+        <div class="col-md-8">
+            <select  required name="genre">
+            <option *ngFor="let g of genres" [value]="g">{{g}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class = "text-white ">Imagen de la carta:</label>
+        <input type="text" [(ngModel)]="model.poster" 
+        class="form-control form-control-sm" id="title" required name="poster" #title="ngModel" placeholder="Descripcion">
+        <div [hidden]="title.invalid || title.pristine" class="alert alert-danger">
+            porfavor, Ingrese la URL de la imagen a pegar
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-warning mr-4" (click)="newCarta(); cartaForm.reset()">Limpiar</button>
+    <button type="submit" class="btn btn-success" [disabled]="!cartaForm.form.valid">Guardar Carta</button>
+</form>
+
